@@ -1,0 +1,36 @@
+.body{
+    display:flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    background-color: cornsilk;
+}
+.body1{
+    display:flex;
+    justify-content: center;
+    height: 65%;
+    align-items: center;
+    
+}
+/*.login1{
+    width: 100%;
+    max-width: 330px;
+    text-align: center;
+}*/
+.ancho{
+    width: 80%;
+}
+
+.button{
+    height: 50px;
+}
+
+.login{
+    width: 100%;
+    max-width: 330px;
+    text-align: center;
+}
+
+
+  
+  

@@ -1,0 +1,39 @@
+<p>crud-marca works!</p>
+
+<div class="row justify-content-center">
+  <div class="col-lg-6">
+      <div class="body" >
+        <div class="login">
+         
+        <form *ngIf="!loading" [formGroup]="form" (ngSubmit)="ingresar()">
+          <p class="fi">
+            <br>
+            <font SIZE=6 FACE="roman" *ngIf="!id">Registrar Marca</font>
+            <font SIZE=6 FACE="roman" *ngIf="id">Editar Marca</font>
+
+          </p>
+            <mat-form-field class="ancho" appearance="fill">
+                <mat-label>Nombre Marca</mat-label>
+                <input type="text" matInput autocomplete="off" formControlName="nombreMarca" >
+              </mat-form-field>
+            <br>
+              <mat-form-field class="ancho" appearance="fill" >
+                <mat-label>Descripcion Marca</mat-label>
+                <input type="text" matInput autocomplete="off" formControlName="descripcionMarca"  >
+              </mat-form-field>
+    
+              <br>
+              <button type="submit" class="ancho button" mat-flat-button color="primary" [disabled]="form.invalid">Ingresar</button>
+              <button routerLink="/dashboard/marca" mat-raised-button class="ancho button"> cancelar</button>
+            </form>
+       </div>
+      </div>
+     </div>
+  </div>
+
+
+<div class="body1">
+  <img  *ngIf="loading" src="./assets/img/spinn.jpg" width="5%">  
+</div>
+    
+

@@ -1,0 +1,41 @@
+<p>crud-producto works!</p>
+
+<div class="row justify-content-center">
+  <div class="col-lg-6">
+      <div class="body" >
+        <div class="login">
+        <form [formGroup]="form" (ngSubmit)="ingresar()">
+          <br>
+          <font SIZE=6 FACE="roman">Registrar Producto</font>
+          <br>
+            <mat-form-field class="ancho" appearance="fill">
+                <mat-label>Nombre Producto</mat-label>
+                <input type="text" matInput autocomplete="off" formControlName="nombreProducto" >
+              </mat-form-field>
+            <br>
+              <mat-form-field class="ancho" appearance="fill" >
+                <mat-label>Descripcion Producto</mat-label>
+                <input type="text" matInput autocomplete="off" formControlName="descripcionProducto"  >
+              </mat-form-field>
+              <br>
+                    <select class="ancho1" id="autoSizingSelect" formControlName="idMarca">
+                        <option selected>--- Seleccione Marca ---</option>
+                        <option [value]="element.idMarca" *ngFor="let element of listMarca">{{element.nombreMarca}}</option>
+                      </select>                
+              <br><br>
+                    <select class="ancho1" id="autoSizingSelect" formControlName="idCategoria">
+                        <option selected>--- Seleccione Categoria ---</option>
+                        <option [value]="element.idCategoria" *ngFor="let element of listCategoria">{{element.nombreCategoria}}</option>
+                      </select>                              
+              <br>
+              <br>
+              <button type="submit" class="ancho button" mat-flat-button color="primary" [disabled]="form.invalid">Ingresar</button>
+              <button class="ancho button" mat-raised-button routerLink="/dashboard/producto"> cancelar</button>
+            </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

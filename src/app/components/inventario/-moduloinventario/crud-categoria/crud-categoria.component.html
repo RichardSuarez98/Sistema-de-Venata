@@ -1,0 +1,59 @@
+<!--div-- >
+    <!div-- >
+      <!--form *ngIf="loading" [formGroup]="form" (ngSubmit)="ingresar()"-->
+      <br>
+      <br>
+      <br>
+   
+
+     
+      <div class="row justify-content-center">
+      <div class="col-lg-6">
+          <div class="body" >
+            <div class="login">
+              <!--*ngIf="!loading"-->
+              <!--mat-spinner *ngIf="loading" class="spinner"></mat-spinner--> 
+             
+              <form *ngIf="!loading"  [formGroup]="form" (ngSubmit)="ingresar()" >
+                <br>
+              <font SIZE=6 FACE="roman" *ngIf="!id">Registrar Categoria</font>
+              <font SIZE=6 FACE="roman" *ngIf="id">Editar Categoria</font>
+              <br>
+              <br>
+                <mat-form-field class="ancho" appearance="fill">
+                    <mat-label>Nombre categoria</mat-label>
+                    <input type="text" matInput autocomplete="off" formControlName="nombreCategoria" >
+                  </mat-form-field>
+                <br>
+                  <mat-form-field class="ancho" appearance="fill" >
+                    <mat-label>Descripcion categoria</mat-label>
+                    <input type="text" matInput autocomplete="off" formControlName="descripcionCategoria"  >
+                  </mat-form-field>
+                  <!--input type="hidden" formControlName="idCategoria"   que hace esto--> 
+                  <br>
+                  <button class="ancho button" type="submit" class="ancho button" mat-flat-button color="primary" [disabled]="form.invalid">Ingresar</button>
+                  <br>
+                  <button class="ancho button" routerLink="/dashboard/categoria" class="ancho button" mat-flat-button color="primary" >cancelar</button>
+                  <br>
+                  <br>
+                </form>
+      
+      
+            </div>
+          </div> 
+        </div>
+      </div>
+
+      <div class="body1">
+        <img  *ngIf="loading" src="./assets/img/spinn.jpg" width="5%">  
+      </div>
+          
+    <!--/div-->
+<!--/div-->
+
+
+<!--button type="submit" class="ancho button" mat-flat-button color="primary">cerrar</button-->
+<!--button mat-raised-button type ="submit"> cerrar</button-->
+
+
+

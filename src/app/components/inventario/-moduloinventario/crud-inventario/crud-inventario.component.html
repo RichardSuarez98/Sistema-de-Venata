@@ -1,0 +1,64 @@
+<p>crud-inventario works!</p>
+ 
+      <div class="row justify-content-center">
+      <div class="col-lg-6">
+          <div class="body" >
+            <div class="login">
+              <!--*ngIf="!loading"-->
+              <!--mat-spinner *ngIf="loading" class="spinner"></mat-spinner--> 
+             
+              <form [formGroup]="form" (ngSubmit)="ingresar()" >
+                <br>
+              <font SIZE=6 FACE="roman">Registrar Inventario</font>
+              <br>
+              <br>
+              <select class="ancho1" id="autoSizingSelect" formControlName="idProducto">
+                <option selected>--- Seleccione Producto ---</option>
+                <option [value]="element.idProducto" *ngFor="let element of listProducto">{{element.nombreProducto}}</option>
+              </select>
+                <br> <br>
+                  <mat-form-field class="ancho" appearance="fill" >
+                    <mat-label>Iva</mat-label>
+                    <input type="text" matInput autocomplete="off" formControlName="iva">
+                  </mat-form-field>
+
+                  <mat-form-field class="ancho" appearance="fill" >
+                    <mat-label>Precio Unitario</mat-label>
+                    <input type="text" matInput autocomplete="off" formControlName="precioUnitario"  >
+                  </mat-form-field>
+        
+                  <mat-form-field class="ancho" appearance="fill" >
+                    <mat-label>Cantidad</mat-label>
+                    <input type="number" matInput autocomplete="off" formControlName="cantidad"  >
+                  </mat-form-field>
+
+                  <br>
+                  <button class="ancho button" type="submit" class="ancho button" mat-flat-button color="primary" [disabled]="form.invalid">Ingresar</button>
+                  <br>
+                  <button class="ancho button" routerLink="/dashboard/inventario" class="ancho button" mat-flat-button color="primary" >cancelar</button>
+                  <br>
+                  <br>
+                </form>
+      
+      
+            </div>
+          </div> 
+        </div>
+      </div>
+
+      <!--div class="body1">
+        <img  *ngIf="loading" src="./assets/img/spinn.jpg" width="5%">  
+      </div-->
+          
+    <!--/div-->
+<!--/div-->
+
+
+<!--button type="submit" class="ancho button" mat-flat-button color="primary">cerrar</button-->
+
+
+<!--button mat-raised-button type ="submit"> cerrar</button-->
+
+
+
+

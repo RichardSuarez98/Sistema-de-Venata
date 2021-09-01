@@ -1,0 +1,77 @@
+
+
+ <div class="row justify-content-center">
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="titulo">Agregar Factura</h2>
+                <!--form [formGroup]="form" (ngSubmit)="agregarPersona()"-->
+                  
+                                                   
+                      <div class="row">
+                        <div class="col-lg-4">
+                            <div class="input-group mb-3">
+                                <select class="form-select" id="autoSizingSelect">
+                                    <option selected>Usuario</option>
+                                    <!--option [value]="persona.cod_sector" *ngFor="let persona of listSector">{{persona.des_sector}}</option-->
+                                  </select>                                      
+                              </div>
+
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="input-group mb-3">
+                                <select class="form-select" id="autoSizingSelect">
+                                    <option selected>Persona</option>
+                                    <!--option [value]="persona.cod_zona" *ngFor="let persona of listZona">{{persona.des_zona}}</option-->
+                                  </select>                           
+                             </div>
+                        </div> 
+
+                        <div class="col-lg-4">
+                            <div class="input-group mb-3">
+                                <select class="form-select" id="autoSizingSelect">
+                                    <option selected >Inventario</option>
+                                    <!--option [value]="persona.cod_zona" *ngFor="let persona of listZona">{{persona.des_zona}}</option-->
+                                  </select>                           
+                             </div>
+                        </div> 
+
+                        <div class="col-lg-6">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Cantidad</span>
+                                <input formControlName="nom_persona" type="text" class="form-control" >                     
+                             </div>
+                        </div> 
+
+                        <div class="col-lg-6">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Precio</span>
+                                <input formControlName="nom_persona" type="text" class="form-control" >                    
+                             </div>
+                        </div> 
+
+
+
+
+
+                    </div>  
+
+                    <div class="d-grid gap-2">                      
+                        <button class="btn btn-primary">Aceptar</button>
+                        
+                      </div>
+                    
+                    
+                <!--/form-->
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+
+

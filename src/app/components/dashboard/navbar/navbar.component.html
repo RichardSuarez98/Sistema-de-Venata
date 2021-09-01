@@ -1,0 +1,40 @@
+<mat-toolbar color='primary'> 
+    <span>Sistemas de Ventas</span>
+    <span class="example-spacer"></span>
+    <button mat-button routerLink="/dashboard">Inicio</button>
+
+    <button mat-button [matMenuTriggerFor]="aboveMenu">Ventas</button>
+    <mat-menu #aboveMenu="matMenu" yPosition="above">
+      <button mat-menu-item>Realizar Venta</button>
+      <button mat-menu-item routerLink="/dashboard/venta">Consulta</button>
+    </mat-menu>
+  
+    <button mat-button [matMenuTriggerFor]="belowMenu">Inventario</button>
+    <mat-menu #belowMenu="matMenu" yPosition="below">
+      <button mat-menu-item routerLink="/dashboard/categoria">Categoria</button>
+      <button mat-menu-item routerLink="/dashboard/marca">Marca</button>
+      <button mat-menu-item routerLink="/dashboard/producto">Producto</button>
+      <button mat-menu-item routerLink="/dashboard/inventario">Inventario</button>
+    </mat-menu>
+    
+    <button mat-button [matMenuTriggerFor]="beforeMenu">Persona</button>
+    <mat-menu #beforeMenu="matMenu" xPosition="before">
+      <button mat-menu-item routerLink="/dashboard/listarpersona">Persona</button>
+      <button mat-menu-item routerLink="/dashboard/usuario">Usuario</button>
+    </mat-menu>
+    
+    
+    <!--button mat-button [matMenuTriggerFor]="afterMenu">Login</button>
+    <mat-menu #afterMenu="matMenu" xPosition="after">
+      <button mat-menu-item>Cerrar sesión</button>
+    </mat-menu-->
+  
+
+    <span class="example-spacer"></span>
+    <span>  Bienvenido {{nomusu.nombreUsuario}}</span>
+      <button (click)="logout()"mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>logout</mat-icon>
+      </button>
+
+
+  </mat-toolbar>

@@ -1,0 +1,16 @@
+.icons{
+    text-align: center;
+}
+
+
+.butCancelar{
+    color: white;
+    background-color: red;
+    text-align: center;
+}
+
+.butEliminar{
+    color: white;
+    background-color: green;
+    text-align: center;
+}
