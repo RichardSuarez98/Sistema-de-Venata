@@ -14,7 +14,7 @@ import { DialogComponent } from './dialog/dialog.component';
   styleUrls: ['./listar-categoria.component.css']
 })
 export class ListarCategoriaComponent implements OnInit {
-  [x: string]: any;
+  //[x: string]: any;
   loading = false;
 
   displayedColumns: string[] = ['id', 'nombre','descripcion','accion'];

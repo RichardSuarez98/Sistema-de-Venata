@@ -50,7 +50,7 @@
                             <th mat-header-cell *matHeaderCellDef> Acciones </th>
                             <td mat-cell *matCellDef="let element"> 
                                 
-                                <button mat-raised-button ><mat-icon>edit</mat-icon></button>
+                              <button type="button" class="btn btn-primary butEdit" routerLink="/dashboard/registrarinventario/{{element | json}}">Edit</button>
                                 <button mat-raised-button (click)="openDialog(element)"><mat-icon>delete</mat-icon></button>
                                 
                             </td>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
+import { IMarca } from 'src/app/interfaces/IMarca';
 import { MarcaServiceService } from './Services/marca-service.service';
 
 @Component({
@@ -55,8 +56,13 @@ export class CrudMarcaComponent implements OnInit {
 
   ingresar(){
 
-    if(this.id<1){
-     this.marcaServcice.add(this.form.value).subscribe(marca =>{
+    if(!this.id){
+      let mar2 : IMarca;
+      mar2={
+        nombreMarca: this.form.value.nombreMarca,
+        descripcionMarca: this.form.value.descripcionMarca
+      }
+     this.marcaServcice.add(mar2).subscribe(marca =>{
       if(marca.exito==1){
         (marca.mensaje)
         this._snackBar.open('Registro exitoso de marca','', { duration: 1500 });

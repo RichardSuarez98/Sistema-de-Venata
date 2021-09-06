@@ -32,5 +32,10 @@ export class ServiceInventarioService {
   getProducto():Observable<any>{
     return this.http.get<any>(this.urlProducto);
    }
+
+   editarInventario(inventario:IInventario):Observable<IResponse>{
+    ("HOLA")
+  return this.http.put<IResponse>(this.urlInventario,inventario);
+}
   
 }

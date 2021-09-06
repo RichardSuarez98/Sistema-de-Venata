@@ -24,6 +24,7 @@ import { RegistrarFacturaComponent } from './components/ventas/registrar-factura
 import { JwtInterceptor } from './components/Security/jwt.interceptor';
 import { DialogComponent } from './components/inventario/listar-categoria/dialog/dialog.component';
 import { ListarPersonaComponent } from './components/inventario/listar-persona/listar-persona.component';
+import { DialogVComponent } from './components/ventas/dialog-v/dialog-v.component';
 //import { ServicePersonaComponent } from './components/inventario/listar-persona/service/service-persona.component';
 
 
@@ -45,6 +46,7 @@ import { ListarPersonaComponent } from './components/inventario/listar-persona/l
     RegistrarFacturaComponent,
     DialogComponent,
     ListarPersonaComponent,
+    DialogVComponent,
    // ServicePersonaComponent,
    // DialogElementsExampleDialog
   ],

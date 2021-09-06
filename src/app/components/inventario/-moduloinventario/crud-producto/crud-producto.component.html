@@ -18,13 +18,22 @@
                 <input type="text" matInput autocomplete="off" formControlName="descripcionProducto"  >
               </mat-form-field>
               <br>
-                    <select class="ancho1" id="autoSizingSelect" formControlName="idMarca">
-                        <option selected>--- Seleccione Marca ---</option>
+
+              
+                <!--input placeholder="Seleccionar Marca" class="ancho1" list="conec" formControlName="idMarca">
+                 <datalist id="conec" >
+                  <option *ngFor="let element of listMarca" [value]="element.idMarca" >{{element.nombreMarca}}</option>
+                 </datalist> 
+               <br-->
+    
+                   <select class="ancho1" id="autoSizingSelect" formControlName="idMarca">
+                        <!--option selected>--- Seleccione Marca ---</option-->
                         <option [value]="element.idMarca" *ngFor="let element of listMarca">{{element.nombreMarca}}</option>
-                      </select>                
-              <br><br>
-                    <select class="ancho1" id="autoSizingSelect" formControlName="idCategoria">
-                        <option selected>--- Seleccione Categoria ---</option>
+                    </select>       
+              <br>
+                    <select class="ancho1" id="autoSizingSelect" formControlName="idCategoria" >
+                        <!--option selected>--- Seleccione Categoria ---</option-->
+                        <!--option value="" disabled selected>--- Seleccione Categoria ---</option-->
                         <option [value]="element.idCategoria" *ngFor="let element of listCategoria">{{element.nombreCategoria}}</option>
                       </select>                              
               <br>

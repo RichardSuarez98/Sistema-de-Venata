@@ -4,4 +4,5 @@ export interface IProducto {
     descripcionProducto: string;
     idMarca:             number;
     idCategoria:         number;
+    
 }

@@ -1,11 +1,19 @@
 export interface IFactura {
-    idFactura?:     number;
+   /* idFactura?:     number;
     idUsuario:     number;
     idPersona:     number;
     fechaEmision:  Date;
     totalFactura:  number;
     totalProducto: number;
-    detalles?:      Detalle[];
+    detalles?:      Detalle[];*/
+    
+        idFactura:      number;
+        cajero:       string;
+        cliente:      string;
+        cedula:       string;
+        fechaEmision: Date;
+        totalFactura: number;
+    
 }
 
 export interface Detalle {

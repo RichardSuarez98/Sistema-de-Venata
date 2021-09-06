@@ -9,7 +9,7 @@ import { IResponse } from 'src/app/interfaces/IResponse';
 })
 export class VentaServiceService {
   private url='https://localhost:44359/api/Factura';
-
+  private urlDetalle='https://localhost:44359/api/Detalle';
   
   constructor(private http:HttpClient) { }
 
@@ -19,6 +19,10 @@ export class VentaServiceService {
   add(factura:IFactura):Observable<IResponse>{
       ("HOLA")
     return this.http.post<IResponse>(this.url,factura);
+  }
+
+  getDetalle(id: number):Observable<IResponse>{
+    return this.http.get<IResponse>(`${this.urlDetalle}/${id}`);
   }
 
 

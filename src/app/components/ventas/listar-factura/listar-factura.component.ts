@@ -1,6 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { IDetalle } from 'src/app/interfaces/IDetalle';
+import { IFactura } from 'src/app/interfaces/IFactura';
+import { DialogVComponent } from '../dialog-v/dialog-v.component';
 import { VentaServiceService } from '../venta-service.service';
 
 @Component({
@@ -10,13 +14,23 @@ import { VentaServiceService } from '../venta-service.service';
 })
 export class ListarFacturaComponent implements OnInit {
 
-displayedColumns: string[] = ['idFactura', 'idUsuario','idPersona','fechaEmision','totalFactura','totalProducto','accion'];
+displayedColumns: string[] = ['idFactura', 'cajero','cliente','cedula','fechaEmision','totalFactura','accion'];
 datasource:any
 
 @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-listFactura:any []=[];
-  constructor(private ventService:VentaServiceService) { }
+listFactura:any []=[];/*
+var FechadeEmision;
+const NumerodeFactura;
+var Cajero;
+var Cliente;
+var Cedula;
+const TotalFactura;*/
+
+
+
+  constructor(private ventService:VentaServiceService,
+              public dialog : MatDialog) { }
 
   ngOnInit(): void {
     this.get();
@@ -43,6 +57,15 @@ listFactura:any []=[];
   }
   
 
+  openDialog(fac:IFactura) {
+ 
+    const dialogo=this.dialog.open(DialogVComponent,{
+      width:'1000px',
+     data:fac
+    })
+  
+     }
+  
 
 
 

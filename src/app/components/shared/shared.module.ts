@@ -18,6 +18,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatTableModule} from '@angular/material/table'; 
 import {MatSelectModule} from '@angular/material/select'; 
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 
 @NgModule({
@@ -37,7 +38,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatTableModule,
     MatSelectModule,
     MatDialogModule,
-    
+    MatAutocompleteModule,
   ],
   exports:[
     MatFormFieldModule,
@@ -53,6 +54,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatTableModule,
     MatSelectModule,
     MatDialogModule,
+    MatAutocompleteModule,
   ]
 })
 export class SharedModule { }

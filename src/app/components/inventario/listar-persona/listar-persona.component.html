@@ -43,10 +43,10 @@
                            
                             <ng-container matColumnDef="accion">
                               <th mat-header-cell *matHeaderCellDef> Acciones </th>
-                              <td mat-cell *matCellDef="let element"> 
+                              <td mat-cell *matCellDef="let element">
                                   
-                                  <button mat-raised-button ><mat-icon>edit</mat-icon></button>
-                                  <button mat-raised-button (click)="openDialog(element)"><mat-icon>delete</mat-icon></button>
+                                <button type="button" class="btn btn-primary butEdit" routerLink="/dashboard/regitrarcategoria/{{element | json}}">Edit</button>
+                                <button mat-raised-button (click)="openDialog(element)"><mat-icon>delete</mat-icon></button>
                                   <!--button mat-button (click)="eliminar(element)">Launch dialog</button-->
                               </td>
                             </ng-container>
