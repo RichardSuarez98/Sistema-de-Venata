@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
 
       if (user.exito === 1) {
         //redireccionamos al dashboard
-        this.router.navigate(['dashboard']);
+        this.router.navigate(['dashboard/venta']);
 
         (user);
 

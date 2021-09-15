@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -25,9 +26,9 @@ import { JwtInterceptor } from './components/Security/jwt.interceptor';
 import { DialogComponent } from './components/inventario/listar-categoria/dialog/dialog.component';
 import { ListarPersonaComponent } from './components/inventario/listar-persona/listar-persona.component';
 import { DialogVComponent } from './components/ventas/dialog-v/dialog-v.component';
+import { CrudpersonaComponent } from './components/inventario/-moduloinventario/crudpersona/crudpersona.component';
 //import { ServicePersonaComponent } from './components/inventario/listar-persona/service/service-persona.component';
-
-
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -47,6 +48,8 @@ import { DialogVComponent } from './components/ventas/dialog-v/dialog-v.componen
     DialogComponent,
     ListarPersonaComponent,
     DialogVComponent,
+    CrudpersonaComponent,
+   // FormsModule
    // ServicePersonaComponent,
    // DialogElementsExampleDialog
   ],
@@ -55,7 +58,9 @@ import { DialogVComponent } from './components/ventas/dialog-v/dialog-v.componen
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    NgbModule,
     
     //MatSliderModule
    

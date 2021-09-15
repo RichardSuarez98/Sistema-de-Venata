@@ -1,0 +1,39 @@
+
+<div class="row justify-content-center">
+  <div class="col-lg-6">
+      <div class="body" >
+        <div class="login">
+        <form [formGroup]="form" (ngSubmit)="ingresar()">
+          <br>
+          <font SIZE=6 FACE="roman">Registrar Persona</font>
+          <br>
+            <mat-form-field class="ancho" appearance="fill">
+                <mat-label>Nombre de Persona</mat-label>
+                <input type="text" matInput autocomplete="off" formControlName="nombrePersona" >
+              </mat-form-field>
+            <br>
+              <mat-form-field class="ancho" appearance="fill" >
+                <mat-label>Cedula</mat-label>
+                <input type="text" matInput autocomplete="off" formControlName="cedula"  >
+              </mat-form-field>
+              <br>
+              <mat-form-field class="ancho" appearance="fill" >
+                <mat-label>Edad</mat-label>
+                <input type="text" matInput autocomplete="off" formControlName="edad"  >
+              </mat-form-field>
+              <br>           
+
+                   <select class="ancho1" id="autoSizingSelect" formControlName="idTipoPersona">
+                        <option [value]="2" >Cliente</option>
+                        <option [value]="1" >Vendedor</option>
+                    </select>       
+              <br>
+              <button type="submit" class="ancho button" mat-flat-button color="primary" [disabled]="form.invalid">Ingresar</button>
+                    <br> <br>
+              <button class="ancho button" mat-raised-button routerLink="/dashboard/listarpersona"> cancelar</button>
+            </form>
+      </div>
+    </div>
+  </div>
+</div>
+

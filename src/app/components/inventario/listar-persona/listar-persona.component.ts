@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatTableDataSource } from '@angular/material/table';
 import { ICategoria } from 'src/app/interfaces/ICategoria';
 import { IPersona } from 'src/app/interfaces/IPersona';
@@ -22,7 +23,9 @@ export class ListarPersonaComponent implements OnInit {
   listPersona:any []=[];
 
   constructor(private personaSer:ServicePersonaService,//poner el servidor de persona
-    public dialog: MatDialog) { }
+    public dialog: MatDialog,
+    private _snackBar: MatSnackBar,
+    ) { }
 
   ngOnInit(): void {
     this.get();
@@ -37,6 +40,7 @@ export class ListarPersonaComponent implements OnInit {
 
     })
   }
+  
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.datasource.filter = filterValue.trim().toLowerCase();
@@ -50,9 +54,11 @@ openDialog(per:IPersona) {
   dialogo.afterClosed().subscribe(s=>{
     if(s){
       this.personaSer.delete(per).subscribe(per=>{
+        console.log(per)
         if(per.exito===1)
         {
           this.get();
+          this._snackBar.open('La Persona ha sido eliminado con exito','', { duration: 3500 });
         }else{
             (per.mensaje);
   

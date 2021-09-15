@@ -5,7 +5,7 @@
 
     <button mat-button [matMenuTriggerFor]="aboveMenu">Ventas</button>
     <mat-menu #aboveMenu="matMenu" yPosition="above">
-      <button mat-menu-item>Realizar Venta</button>
+      <button mat-menu-item routerLink="/dashboard/registrarFactura">Realizar Venta</button>
       <button mat-menu-item routerLink="/dashboard/venta">Consulta</button>
     </mat-menu>
   

@@ -8,6 +8,7 @@ import { LoginServicesService } from 'src/app/services/login-services.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  showFiller = false;
   nomusu:any
   constructor(
                private _login:LoginServicesService,

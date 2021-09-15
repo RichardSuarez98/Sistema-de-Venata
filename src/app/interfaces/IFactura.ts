@@ -10,6 +10,7 @@ export interface IFactura {
         idFactura:      number;
         cajero:       string;
         cliente:      string;
+        estadoFacturacion: boolean;
         cedula:       string;
         fechaEmision: Date;
         totalFactura: number;

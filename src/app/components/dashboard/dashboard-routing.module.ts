@@ -5,6 +5,7 @@ import { CrudCategoriaComponent } from '../inventario/-moduloinventario/crud-cat
 import { CrudInventarioComponent } from '../inventario/-moduloinventario/crud-inventario/crud-inventario.component';
 import { CrudMarcaComponent } from '../inventario/-moduloinventario/crud-marca/crud-marca.component';
 import { CrudProductoComponent } from '../inventario/-moduloinventario/crud-producto/crud-producto.component';
+import { CrudpersonaComponent } from '../inventario/-moduloinventario/crudpersona/crudpersona.component';
 import { ListarCategoriaComponent } from '../inventario/listar-categoria/listar-categoria.component';
 import { ListarInventarioComponent } from '../inventario/listar-inventario/listar-inventario.component';
 import { ListarMarcaComponent } from '../inventario/listar-marca/listar-marca.component';
@@ -15,6 +16,7 @@ import { RegistrarFacturaComponent } from '../ventas/registrar-factura/registrar
 import { DashboardComponent } from './dashboard.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { ReportesComponent } from './reportes/reportes.component';
+import { RegistrarUsuarioComponent } from './usuarios/registrar-usuario/registrar-usuario.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 
 
@@ -22,6 +24,8 @@ const routes: Routes = [
   {path:'',component:DashboardComponent,children:[
     {path:'', component:InicioComponent},
     {path:'usuario', component:UsuariosComponent},
+    {path:'registrarusuario', component:RegistrarUsuarioComponent},
+    {path:'registrarusuario/:id', component:RegistrarUsuarioComponent},
     {path:'reportes', component:ReportesComponent},
     {path:'categoria', component:ListarCategoriaComponent},
     {path:'regitrarcategoria',component:CrudCategoriaComponent},
@@ -38,6 +42,9 @@ const routes: Routes = [
     {path:'venta',component:ListarFacturaComponent},
     {path:'registrarFactura',component:RegistrarFacturaComponent},
     {path:'listarpersona',component:ListarPersonaComponent},
+    {path:'registrarPersona',component:CrudpersonaComponent},
+    {path:'registrarPersona/:id',component:CrudpersonaComponent},
+
 
   ]}
 ];

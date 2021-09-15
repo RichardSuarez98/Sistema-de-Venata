@@ -18,10 +18,10 @@ table {
 }
 
 .butDelete{
-background-color: red;
+background-color:rgb(20, 20, 20);;
 color: white;
 }
 
 .butEdit{
-  background-color: green;
+  background-color: #0d6efd;
 }

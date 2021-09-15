@@ -1,13 +1,23 @@
 <h2 style="text-align: center;">F A C T U R A &nbsp; E L E C T R O N I C A</h2>
-
-<h2 style="text-align: left; width:40%; display: inline-block;">Cajero:&nbsp;<span class="l">{{Cajero}}</span></h2>
-<h2 style="text-align: right; width:44%;  display: inline-block;">Fecha de Emision:&nbsp;<span class="l">{{FechadeEmision|date}}</span></h2>
-
-<h2 style="text-align: left; width:40%; display: inline-block;">Cliente:&nbsp;<span class="l">{{Cliente}}</span></h2>
-<h2 style="text-align: right; width:30%;  display: inline-block;">Numero de Factura:&nbsp;&nbsp;<span class="l">#{{NumerodeFactura}}</span></h2>
-
-
-<h2>Cedula:&nbsp;<span class="l">{{Cedula}}</span></h2>
+<div class="card">
+<div class="row mt-4">
+<div class="col-lg-6">  
+        <div class="card-body">
+            <h2>Cajero:&nbsp;<span class="l">{{Cajero}}</span></h2>
+            <h2>Cliente:&nbsp;<span class="l">{{Cliente}}</span></h2>
+            <h2>Cedula:&nbsp;<span class="l">{{Cedula}}</span></h2>
+        </div> 
+</div>
+<div class="col-lg-6">
+    
+        <div class="card-body">
+            <h2>Fecha de Emision:&nbsp;&nbsp;<span class="l">{{FechadeEmision|date: 'MM/dd/yyyy'}}</span></h2>
+            <h2 style="color: red;">N.° de Factura:&nbsp;&nbsp;<span class="l">{{NumerodeFactura}}</span></h2>
+            <h2>Estado:&nbsp;<span class="l">{{Estado}}</span></h2>
+        </div>
+</div>
+</div>
+</div>
 
 
   <div class="row justify-content-center">
@@ -59,11 +69,11 @@
                     <mat-paginator [pageSizeOptions]="[5]"
                 aria-label="Select page of periodic elements">
               </mat-paginator>
-          
               </div>
 
-              <h2 style="text-align: right; width:85%;  display: inline-block;">Total Factura:<span class="l">{{TotalFactura}}</span></h2>
-    
+              <h1 style="text-align: right; width:95%;  display: inline-block; color: red;">Total Factura:&nbsp;<span class="l">{{TotalFactura |currency}}</span></h1>
+              <button mat-button style="background-color: #0d6efd; color: white;" (click)="devolverFactura()" *ngIf="AnularBoton">Devolver Factura</button>
+
     
     
   

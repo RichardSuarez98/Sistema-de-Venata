@@ -1,0 +1,32 @@
+<br><br>
+<div class="row justify-content-center">
+    <div class="col-lg-6">
+        <div class="body" >
+          <div class="login">
+            <form [formGroup]="form" (ngSubmit)="ingresar()" >
+              <font SIZE=6 FACE="roman">Registrar Usuario</font><br><br>
+              <mat-form-field class="ancho" appearance="fill">
+                  <mat-label >Usuario</mat-label>
+                  <input  type="text" matInput autocomplete="off" formControlName="nombreUsuario">
+                </mat-form-field>
+              <br>
+                <mat-form-field class="ancho" appearance="fill" >
+                  <mat-label>Password</mat-label>
+                  <input type="password" matInput autocomplete="off" formControlName="password"  >
+                </mat-form-field>
+                <br>
+                <select class="ancho but" id="autoSizingSelect" formControlName="idPersona">
+                  <option selected>--- Seleccione Persona ---</option>
+                  <option [value]="element.idPersona" *ngFor="let element of listPersona">{{element.nombrePersona}}</option>
+                </select>
+                <br>
+                <br>
+                <button class="ancho button" type="submit" mat-flat-button color="primary" [disabled]="form.invalid">Ingresar</button>
+                <br><br>
+                <button class="ancho button" routerLink="/dashboard/usuario" mat-flat-button color="primary">Cancelar</button>
+
+              </form>
+
+      </div>
+  </div>
+</div>

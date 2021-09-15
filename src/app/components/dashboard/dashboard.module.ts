@@ -8,7 +8,7 @@ import { InicioComponent } from './inicio/inicio.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { ReportesComponent } from './reportes/reportes.component';
-import { DialogregisComponent } from './usuarios/dialogregis/dialogregis.component';
+import { RegistrarUsuarioComponent } from './usuarios/registrar-usuario/registrar-usuario.component';
 //import { CrudMarcaComponent } from './inventario/-moduloinventario/crud-marca/crud-marca.component';
 
 
@@ -19,7 +19,7 @@ import { DialogregisComponent } from './usuarios/dialogregis/dialogregis.compone
     NavbarComponent,
     UsuariosComponent,
     ReportesComponent,
-    DialogregisComponent,
+    RegistrarUsuarioComponent,
    // CrudMarcaComponent
   ],
   imports: [

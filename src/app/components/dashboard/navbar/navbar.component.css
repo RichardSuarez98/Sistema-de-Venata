@@ -1,3 +1,32 @@
 .example-spacer {
     flex: 1 1 auto;
   }
+
+  .example-container {
+    width: 400px;
+    height: 200px;
+    margin: 10px;
+    border: 1px solid #555;
+  }.example-container {
+    width: 400px;
+    height: 200px;
+    margin: 12px;
+    border: 1px solid #555;
+  }
+  
+  .mat-drawer-content {
+    padding: 2px;
+    display: flex;
+    flex-direction: row;/*column*/
+    align-items: baseline;/*flex star*/
+    background-color: chartreuse;
+  }
+
+
+  .mat-drawer {
+    background-color: rgb(0, 89, 255);
+    width: 300px;
+  }
+
+
+  

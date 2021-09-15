@@ -19,6 +19,11 @@ import {MatTableModule} from '@angular/material/table';
 import {MatSelectModule} from '@angular/material/select'; 
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {FormsModule} from '@angular/forms';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatDividerModule} from '@angular/material/divider';
 
 
 @NgModule({
@@ -39,6 +44,11 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     MatSelectModule,
     MatDialogModule,
     MatAutocompleteModule,
+    FormsModule,
+    MatSidenavModule,
+    MatListModule,
+    MatExpansionModule,
+    MatDividerModule
   ],
   exports:[
     MatFormFieldModule,
@@ -55,6 +65,11 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     MatSelectModule,
     MatDialogModule,
     MatAutocompleteModule,
+    FormsModule,
+    MatSidenavModule,
+    MatListModule,
+    MatExpansionModule,
+    MatDividerModule
   ]
 })
 export class SharedModule { }

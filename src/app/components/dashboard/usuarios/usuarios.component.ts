@@ -17,7 +17,7 @@ import { UsuarioServiceService } from './usuario-service.service';
 export class UsuariosComponent implements OnInit {
   //loading = false;
   hide = true;
-  id: number | undefined;
+
 
 
   displayedColumns: string[] = ['id', 'nombre','password','idPersona','accion'];
@@ -26,82 +26,23 @@ export class UsuariosComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   listUsuario:any []=[];
-  listPersona:any []=['persona'];
 
-  form: FormGroup
   constructor(private usuariService:UsuarioServiceService,
               private fb :FormBuilder,
               private _snackBar: MatSnackBar,
               public dialog: MatDialog,
     ) {
-      this.form= this.fb.group({
-      //  idUsuario:[''],
-        nombreUsuario:['',Validators.required],
-        password:['',Validators.required],
-        idPersona:['',Validators.required]
-      })
+  
      }
 
   ngOnInit(): void {
     this.get();
-    this.getPersona();
-  }
-
-  ingresar() {
-    //const usuario = this.form.value.usuario;
-    //const password= this.form.value.password;
-    if(this.id== undefined){
-      this.usuariService.addUsuario(this.form.value).subscribe(usuario =>{
-        if(usuario.exito==1){
-            (usuario.mensaje)  
-            this.get();
-             this.form.reset();
-                //window.location.reload();
-                this._snackBar.open('Registro exitoso de Usuario','', { duration: 1500 });           
-               // this.route.navigate(['dashboard/categoria']);
-        }
-        else{
-            (usuario.mensaje)
-            this._snackBar.open('Error al Registrar Usuario','', { duration: 5000 });
-        }
-        
-     /* }, () =>{
-          ("Error de conexion");
-          this._snackBar.open('Error al Registrar Usuario','', { duration: 5000 });*/
-      })
-    }else{
-       ///METODO ACTUALIZAR
-     //  this.actualizarPrueba();
-    
-    }
-    
-    
-   // this.loading=true;
-  }
-
-  actualizarPrueba(usuar:IUsuario){
-    
-    usuar.idUsuario=this.id;
-    this.usuariService.updateUsuario(usuar).subscribe(data=>{
-      this.form.reset();
-      //this.accion='agregar';
-      this.id=undefined;
-      this._snackBar.open('Exito al Actualizar Usuario','', { duration: 5000 });
-      this.get();
-    },error=>{
-      (error);
-    })
+  
   }
 
 
 
-  getPersona(){
-    this.usuariService.getPer().subscribe(per =>{
-     
-      this.listPersona=per;
 
-    })
-  }
 
   get(){
     this.usuariService.getUsuario().subscribe(usu =>{
@@ -132,26 +73,6 @@ export class UsuariosComponent implements OnInit {
       }
     })  
   }*/
-
-  resetear(){
-    this.form.reset();
-  }
-
-
- editar(usuario: IUsuario){
-    //(usuario);
-    this.id= usuario.idPersona;
-
-    this.form.patchValue({
-      nombreUsuario:usuario.nombreUsuario,
-        password: usuario.password,
-        idPersona:usuario.idPersona
-    })
- }
-
-
-
-
 
  
 openDialog(usu:IUsuario) {//E L I M I N A R

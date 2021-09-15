@@ -1,7 +1,4 @@
-<p>listar-marca works!</p>
-
-
-
+<br>
 <div class="row justify-content-center">
   <div class="col-lg-7">
         <div class="card">
@@ -14,8 +11,7 @@
                     <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
                   </mat-form-field>
 
-                  <button routerLink="/dashboard/regitrarmarca" mat-raised-button style="margin-left:40px; background-color: rgb(70, 50, 255); ">agregar</button>
-            
+                  <span style="cursor: pointer; font-size: 35px;" class="material-icons" routerLink="/dashboard/regitrarmarca">note_add</span>            
                 <table mat-table [dataSource]="datasource"class="mat-elevation-z8" >
             
                     <!--- Note that these columns can be defined in any order.
@@ -42,9 +38,8 @@
                             <th mat-header-cell *matHeaderCellDef> Acciones </th>
                             <td mat-cell *matCellDef="let element"> 
                                 
-                              <button type="button" class="btn btn-primary butEdit" routerLink="/dashboard/regitrarmarca/{{element | json}}">Edit</button>
-                                <button mat-raised-button (click)="openDialog(element)"><mat-icon>delete</mat-icon></button>
-                                
+                                <span style="cursor: pointer;" class="material-icons" routerLink="/dashboard/regitrarmarca/{{element | json}}">edit_note</span>
+                                <span style="cursor: pointer;" class="material-icons" (click)="openDialog(element)" >delete_forever</span> 
                             </td>
                           </ng-container>
                   
@@ -52,7 +47,7 @@
                     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
                     
                   </table>
-                  <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                  <mat-paginator [pageSizeOptions]="[10, 20]"
               aria-label="Select page of periodic elements">
             </mat-paginator>
         

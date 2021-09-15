@@ -1,4 +1,4 @@
-<p>usuarios works!</p>
+<br><br>
 <div class="row justify-content-center">
 
     <div class="col-lg-7">
@@ -13,6 +13,7 @@
                     <mat-label>Filtro</mat-label>
                     <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
                   </mat-form-field>
+                  <span style="cursor: pointer; font-size: 35px;" class="material-icons" routerLink="/dashboard/registrarusuario">note_add</span>                   
 
                   <!--button mat-raised-button routerLink="/dashboard/regitrarcategoria" (click)="mostrar()" style="margin-left:40px; background-color: rgb(70, 50, 255);">agregar</button-->
                   <!--button mat-raised-button (click)="cerr()" style="margin-left:3px; background-color: rgb(70, 50, 255);">cerrar</button-->
@@ -20,8 +21,7 @@
             
                     <!--- Note that these columns can be defined in any order.
                           The actual rendered columns are set as a property on the row definition" -->
-                  
-                    
+          
                           <ng-container matColumnDef="id">
                             <th mat-header-cell *matHeaderCellDef> Id </th>
                             <td mat-cell *matCellDef="let element"> {{element.idUsuario}} </td>
@@ -47,9 +47,8 @@
                             <th mat-header-cell *matHeaderCellDef> Acciones </th>
                             <td mat-cell *matCellDef="let element"> 
                                 
-                                <button mat-raised-button (click)="editar(element)"><mat-icon>edit</mat-icon></button>
-                                <button mat-raised-button (click)="openDialog(element)"><mat-icon>delete</mat-icon></button>
-                                
+                                <span style="cursor: pointer;" class="material-icons" routerLink="/dashboard/registrarusuario/{{element | json}}">edit_note</span>
+                                <span style="cursor: pointer;" class="material-icons" (click)="openDialog(element)" >delete_forever</span> 
                             </td>
                           </ng-container>
                   
@@ -75,38 +74,7 @@
 
 
 
-<br>
-<div class="row justify-content-center">
-<div class="col-lg-7">
-  <div class="card">
-      <div class="card-body fi">
-            <form [formGroup]="form" (ngSubmit)="ingresar()" >
-              <font SIZE=5 FACE="roman">Registrar Usuario</font>
-              <mat-form-field appearance="fill">
-                  <mat-label>Usuario</mat-label>
-                  <input type="text" matInput autocomplete="off" formControlName="nombreUsuario" >
-                </mat-form-field>
-              <br>
-                <mat-form-field appearance="fill" >
-                  <mat-label>Password</mat-label>
-                  <input type="password" matInput autocomplete="off" formControlName="password"  >
-                </mat-form-field>
 
-                <select class="ancho button" id="autoSizingSelect" formControlName="idPersona">
-                  <option selected>--- Seleccione Persona ---</option>
-                  <option [value]="element.idPersona" *ngFor="let element of listPersona">{{element.nombrePersona}}</option>
-                </select>
-                <br>
-                <br>
-                <button class="ancho button" type="submit" mat-flat-button color="primary" [disabled]="form.invalid">Ingresar</button>
-                <br>
-               
-              </form>
-
-      </div>
-  </div>
-</div>
-</div>
 
 
    

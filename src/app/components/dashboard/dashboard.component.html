@@ -1,2 +1,61 @@
-<app-navbar></app-navbar>
-<router-outlet></router-outlet>
+<mat-toolbar style="background-color:#0d6efd ;">
+    <span class="example-spacer"></span>
+    <span style="color: white;">  Bienvenido {{nomusu.nombreUsuario}}</span>
+    <button (click)="logout()"mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon style="color: white;">logout</mat-icon>
+      </button>
+</mat-toolbar>
+
+
+<mat-sidenav-container autosize>
+     
+    <mat-sidenav #sidenav mode="side" opened="true" style="background-color: rgb(20, 20, 20);">
+
+        <mat-nav-list >
+
+            <mat-list-item>
+                <mat-icon  mat-list-icon class="chevron-button sidenav-button" (click)="isExpanded = !isExpanded" [ngClass]="{'rotated':isExpanded}">chevron_right</mat-icon>
+            </mat-list-item>
+
+            <mat-list-item style="color: white;">
+                <mat-icon mat-list-icon class="">home</mat-icon>
+                <span *ngIf="isExpanded" routerLink="/dashboard">Inicio</span>
+            </mat-list-item>
+
+            <mat-list-item style="color: white;">
+                <mat-icon mat-list-icon class="" >point_of_sale</mat-icon>
+                <span *ngIf="isExpanded">Ventas<mat-icon (click)="expanVenta = !expanVenta" class="expaaVent" >expand_more</mat-icon></span>               
+            </mat-list-item>
+            <h3 class="cursorMarCol" *ngIf="expanVenta" routerLink="/dashboard/registrarFactura">Realizar Venta</h3>
+            <h3 class="cursorMarCol" *ngIf="expanVenta" routerLink="/dashboard/venta">Consulta</h3>
+
+
+            <mat-list-item style="color: white;">
+                <mat-icon mat-list-icon class="">inventory</mat-icon>  
+                <span *ngIf="isExpanded" >Inventario<mat-icon (click)="expan = !expan" style="margin-left: 50px">expand_more</mat-icon></span>          
+            </mat-list-item>
+            <h3 class="cursorMarCol" *ngIf="expan" mat-menu-item routerLink="/dashboard/categoria">Categoria</h3>     
+            <h3 class="cursorMarCol" *ngIf="expan" routerLink="/dashboard/marca">Marca</h3>
+            <h3 class="cursorMarCol" *ngIf="expan" routerLink="/dashboard/producto">Producto</h3>
+            <h3 class="cursorMarCol" *ngIf="expan" routerLink="/dashboard/inventario">Inventario</h3>
+            
+            <mat-list-item style="color: white;">
+                <mat-icon mat-list-icon class="">person</mat-icon>
+                <span *ngIf="isExpanded">Persona<mat-icon (click)="expanPersona = !expanPersona" style="margin-left: 60px">expand_more</mat-icon></span>
+            </mat-list-item>
+            <h3 class="cursorMarCol" *ngIf="expanPersona" routerLink="/dashboard/listarpersona">Persona</h3>     
+            <h3 class="cursorMarCol" *ngIf="expanPersona" routerLink="/dashboard/usuario">Usuario</h3>
+
+
+        </mat-nav-list> 
+
+    </mat-sidenav>
+
+    <!--app-navbar></app-navbar--> <!--aqui iba el componente reutilizado de navbar-->
+    <div>
+        <router-outlet></router-outlet>
+    </div>
+    
+</mat-sidenav-container>
+
+

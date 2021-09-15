@@ -1,3 +1,32 @@
-.example-spacer {
-    flex: 1 1 auto;
+      .example-spacer {
+          flex: 1 1 auto;
+        }
+
+  mat-sidenav-container{
+    height: 92%;
   }
+
+  .chevron-button{
+    transition: 300ms ease-in-out;
+    transform: rotate(0deg);
+    right: 0;
+    float: right;
+    position: absolute;
+    color: white;
+  }
+
+  .chevron-button.rotated{
+    transform: rotate(180deg);
+  }
+
+  .expaaVent{
+   margin-left: 73px;
+  }
+
+  .cursorMarCol{
+    margin-left: 50px;
+    color: white;
+    cursor: pointer;
+  }
+
+  

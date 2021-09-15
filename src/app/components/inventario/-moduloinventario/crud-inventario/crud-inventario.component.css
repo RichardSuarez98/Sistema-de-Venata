@@ -3,7 +3,6 @@
     justify-content: center;
     height: 100%;
     align-items: center;
-    background-color: cornsilk;
 }
 .body1{
     display:flex;
@@ -23,6 +22,8 @@
 
 .button{
     height: 50px;
+    background-color: #0d6efd;
+    color: white;
 }
 
 .login{

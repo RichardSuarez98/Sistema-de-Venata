@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+
 import { IDetalle } from 'src/app/interfaces/IDetalle';
 import { IFactura } from 'src/app/interfaces/IFactura';
 import { DialogVComponent } from '../dialog-v/dialog-v.component';
@@ -41,7 +42,9 @@ const TotalFactura;*/
      
       this.listFactura=venta;
       this.datasource=new MatTableDataSource(this.listFactura);
+     // this.paginator=this.idFactura
       this.datasource.paginator=this.paginator;
+      console.log(venta);
 
     })
   }
@@ -60,9 +63,13 @@ const TotalFactura;*/
   openDialog(fac:IFactura) {
  
     const dialogo=this.dialog.open(DialogVComponent,{
-      width:'1000px',
+      width:'700px',
      data:fac
     })
+    dialogo.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+     // this.animal = result;
+    });
   
      }
   

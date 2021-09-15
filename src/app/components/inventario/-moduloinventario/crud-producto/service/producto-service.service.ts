@@ -15,6 +15,7 @@ export class ProductoServiceService {
 
     private urlCategoria='https://localhost:44359/api/Categoria';
     private urlMarca='https://localhost:44359/api/Marca';
+    
 
   constructor(private http:HttpClient) { }
 

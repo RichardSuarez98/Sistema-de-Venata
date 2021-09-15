@@ -3,7 +3,7 @@
     justify-content: center;
     height: 100%;
     align-items: center;
-    background-color: rgb(255, 240, 187);
+    background-color: rgb(20, 20, 20);
 }
 
 .login{
@@ -19,6 +19,8 @@
 
 .button{
     height: 50px;
+    background-color: #0d6efd;
+    color: white;
 }
 
 .spinner{

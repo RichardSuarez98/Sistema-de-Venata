@@ -1,5 +1,4 @@
-<p>listar-factura works!</p>
-  <br>
+<br>
   <div class="row justify-content-center">
       <div class="col-lg-8">
           <div class="card">
@@ -12,8 +11,8 @@
                       <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
                     </mat-form-field>
 
-                    <button mat-raised-button routerLink="/dashboard/registrarFactura" style="margin-left:40px; background-color: rgb(70, 50, 255);">agregar</button>
-                  <table mat-table [dataSource]="datasource"class="mat-elevation-z8" >
+                    <span style="cursor: pointer; font-size: 35px;" class="material-icons" routerLink="/dashboard/registrarFactura">note_add</span>                   
+                  <table mat-table [dataSource]="datasource" class="mat-elevation-z8" >
 
                             <ng-container matColumnDef="idFactura">
                               <th mat-header-cell *matHeaderCellDef> Factura </th>
@@ -46,9 +45,9 @@
                               </ng-container>
                           
                             <ng-container matColumnDef="accion">
-                              <th mat-header-cell *matHeaderCellDef> Acciones </th>
+                              <th mat-header-cell *matHeaderCellDef> Accion </th>
                               <td mat-cell *matCellDef="let element">                     
-                                  <button mat-raised-button (click)="openDialog(element)"><mat-icon>edit</mat-icon></button>
+                                  <mat-icon style="cursor: pointer;" (click)="openDialog(element)">plagiarism</mat-icon>
                                   <!--button mat-raised-button (click)="eliminar(element)"><mat-icon>delete</mat-icon></button-->                  
                               </td>
                             </ng-container>
@@ -57,9 +56,11 @@
                       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
                       
                     </table>
-                    <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                    
+                    <mat-paginator [pageSizeOptions]="[10, 20]"
                 aria-label="Select page of periodic elements">
               </mat-paginator>
+
           
               </div>
           </div>
